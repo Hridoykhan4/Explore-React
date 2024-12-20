@@ -1,3 +1,5 @@
+import User from "./User"
+
 import { useEffect, useState } from "react"
 
 export default function Users(){
@@ -12,8 +14,11 @@ export default function Users(){
     }, []) //prothom bar data load korte gele ekTa empty Array dibo
 
     return(
-        <div>
+        <div className="box">
             <h3>Users: {users.length}</h3>
+            {
+                users.map((user) => <User user={user}></User>)
+            }
         </div>
     )
 }
